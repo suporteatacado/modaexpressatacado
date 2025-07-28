@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Moda Express Atacado</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #fffaf7;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #ff4d6d;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+    }
+    header img {
+      max-width: 180px;
+      border-radius: 12px;
+      margin-bottom: 15px;
+    }
+    header h1 {
+      margin: 10px 0 5px;
+      font-size: 2em;
+    }
+    section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+    h2 {
+      margin-bottom: 20px;
+      color: #ff4d6d;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 20px auto;
+      max-width: 400px;
+    }
+    li {
+      padding: 10px 0;
+      font-size: 1.1em;
+    }
+    .whatsapp-button, .instagram-button {
+      display: inline-block;
+      margin: 10px;
+      padding: 15px 25px;
+      background-color: #25d366;
+      color: white;
+      font-size: 1.1em;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+    }
+    .whatsapp-button:hover {
+      background-color: #1ebe5c;
+    }
+    .instagram-button {
+      background-color: #e1306c;
+    }
+    .instagram-button:hover {
+      background-color: #c12e5d;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+      margin-top: 30px;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    button {
+      background-color: #ff4d6d;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1em;
+    }
+    button:hover {
+      background-color: #e43c59;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #f5f5f5;
+      font-size: 0.9em;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="logo.jpeg" alt="Logo Moda Express Atacado">
+    <h1>Moda Express Atacado</h1>
+    <p>Looks direto da fábrica com preços imbatíveis!</p>
+  </header>
+
+  <section>
+    <h2>🔥 Promoção por tempo limitado!</h2>
+    <ul>
+      <li>🛒 Pedido mínimo de R$100,00</li>
+      <li>📄 Sem necessidade de CNPJ</li>
+      <li>🚚 Entregamos para todo o Brasil</li>
+    </ul>
+    <a class="whatsapp-button" href="https://wa.me/5511919433294" target="_blank">Fale no WhatsApp</a>
+    <a class="instagram-button" href="https://www.instagram.com/modaexpress_atacado" target="_blank">Visite nosso Instagram</a>
+  </section>
+
+  <section>
+    <h2>🛍️ Nossos Produtos</h2>
+    <div class="gallery">
+      <!-- Substitua as imagens abaixo pelos seus produtos -->
+      <img src="produto1.jpg" alt="Produto 1">
+      <img src="produto2.jpg" alt="Produto 2">
+      <img src="produto3.jpg" alt="Produto 3">
+    </div>
+  </section>
+
+  <section>
+    <h2>📩 Fale Conosco</h2>
+    <form action="#" method="POST">
+      <input type="text" name="nome" placeholder="Seu nome" required>
+      <input type="email" name="email" placeholder="Seu e-mail" required>
+      <textarea name="mensagem" rows="5" placeholder="Sua mensagem" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2025 Moda Express Atacado. Todos os direitos reservados.
+  </footer>
+
+</body>
+</html>
