@@ -1,283 +1,230 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<style>
-  /* Responsivo para telas pequenas */
-  @media (max-width: 768px) {
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Moda Express Atacado</title>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      background: #fff6f9;
+      color: #222;
+      margin: 0;
+      padding: 0;
+    }
     header {
-      padding: 20px;
-    }
-
-    h1 {
-      font-size: 1.8em;
-    }
-
-    h2 {
-      font-size: 1.4em;
-    }
-
-    .product {
-      flex-direction: column;
-      padding: 15px;
-    }
-
-    .product img {
-      max-width: 100%;
-    }
-
-    .product-info {
-      padding: 10px;
       text-align: center;
-    }
-
-    .buy-button {
-      width: 90%;
-      font-size: 1em;
-    }
-
-    .checkout-link a {
-      font-size: 1em;
-      padding: 10px 20px;
-    }
-  }
-</style>
-
-    }
-
-    /* WhatsApp Button */
-    .whatsapp-float {
-      position: fixed;
-      width: 60px;
-      height: 60px;
-      bottom: 30px;
-      right: 30px;
-      background-color: #25D366;
+      padding: 30px;
+      background: #ff66b2;
       color: white;
-      border-radius: 50%;
-      text-align: center;
-      font-size: 30px;
-      z-index: 1000;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     }
-
-    .whatsapp-float i {
-      margin-top: 16px;
-    }
-
-    header {
-      background-color: #ff66b2;
-      text-align: center;
-      padding: 20px;
-    }
-
     header img {
       max-width: 180px;
       height: auto;
     }
-
-    header h1 {
-      color: white;
+    h1 {
       margin: 10px 0 5px;
       font-size: 2.5em;
     }
-
-    header p {
-      color: #fff;
-      font-size: 1em;
-      margin: 5px;
-    }
-
-    .banner {
-      width: 100%;
-      max-height: 400px;
-      overflow: hidden;
-    }
-
-    .banner img {
-      width: 100%;
-      object-fit: cover;
-    }
-
     h2 {
-      text-align: center;
-      color: #d63384;
-      margin-top: 40px;
       font-size: 2em;
+      color: #d63384;
+      margin: 40px 0 20px;
+      text-align: center;
     }
-
-    .vitrine {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-      gap: 25px;
-      padding: 30px;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .produto {
-      background: white;
-      border-radius: 12px;
+    .product {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      color: #333;
+      margin: 20px auto;
+      max-width: 900px;
+      border-radius: 15px;
       box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      overflow: hidden;
+      padding: 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .product:hover {
+      transform: scale(1.02);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+    .product img {
+      width: 100%;
+      max-width: 350px;
+      border-radius: 10px;
       transition: transform 0.3s ease;
     }
-
-    .produto:hover {
-      transform: scale(1.03);
+    .product img:hover {
+      transform: scale(1.05);
     }
-
-    .produto img {
-      width: 100%;
-      height: auto;
-      display: block;
+    .product-info {
+      flex: 1;
+      padding: 20px;
     }
-
-    .produto-info {
-      padding: 15px;
-    }
-
-    .produto-info h3 {
-      margin-top: 0;
+    .product-info h3 {
       color: #b30059;
-      font-size: 1.2em;
+      font-size: 1.4em;
     }
-
-    .produto-info p {
-      margin: 5px 0;
-      font-size: 0.95em;
-    }
-
-    .preco {
+    .price {
+      font-size: 1.5em;
       font-weight: bold;
+      margin: 10px 0;
       color: #e91e63;
-      font-size: 1.2em;
     }
-
-    .produto select {
-      width: 100%;
+    .options label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    .options select {
       padding: 5px;
-      margin-top: 8px;
+      font-size: 1em;
+      margin-top: 5px;
       border-radius: 5px;
       border: 1px solid #ccc;
     }
-
-    .botao-comprar {
-      display: block;
-      text-align: center;
-      margin-top: 15px;
+    .buy-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
       background: #e91e63;
-      color: white;
-      padding: 10px;
-      border-radius: 6px;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1.1em;
       text-decoration: none;
       transition: background 0.3s ease;
     }
-
-    .botao-comprar:hover {
+    .buy-button:hover {
       background: #c2185b;
     }
-
-    footer {
-      background: #f1f1f1;
+    .checkout-link {
+      display: block;
       text-align: center;
-      padding: 30px 20px;
-      font-size: 0.9em;
-      color: #666;
-      margin-top: 60px;
+      margin-top: 40px;
+    }
+    .checkout-link a {
+      background: #d63384;
+      color: #fff;
+      padding: 12px 24px;
+      font-size: 1.2em;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 8px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+      transition: background 0.3s ease;
+    }
+    .checkout-link a:hover {
+      background: #ad1964;
     }
 
-    footer a {
-      color: #d63384;
+    /* Botão flutuante WhatsApp */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: white;
+      border-radius: 50%;
+      width: 55px;
+      height: 55px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 28px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+      z-index: 999;
       text-decoration: none;
+    }
+
+    /* Responsivo para celulares */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 1.8em;
+      }
+      h2 {
+        font-size: 1.4em;
+      }
+      .product {
+        flex-direction: column;
+        padding: 15px;
+      }
+      .product img {
+        max-width: 100%;
+      }
+      .product-info {
+        padding: 10px;
+        text-align: center;
+      }
+      .buy-button {
+        width: 90%;
+        font-size: 1em;
+      }
+      .checkout-link a {
+        font-size: 1em;
+        padding: 10px 20px;
+      }
     }
   </style>
 </head>
 <body>
+  <header>
+    <img src="logo.jpeg.png" alt="Logo Moda Express" />
+    <h1>Moda Express Atacado</h1>
+    <p>Looks direto da fábrica com promoção por tempo limitado!</p>
+    <p>Pedido mínimo R$100 | Sem necessidade de CNPJ | Entregamos para todo o Brasil</p>
+  </header>
 
-  <!-- Botão WhatsApp -->
-  <a href="https://wa.me/5511919433294" class="whatsapp-float" target="_blank" title="Fale Conosco no WhatsApp">
-    <i>📱</i>
-  </a>
+  <section id="casacos">
+    <h2>🧥 Casacos e Jaquetas</h2>
 
-<header>
-  <img src="logo.jpeg.png" alt="Logo Moda Express" />
-  <h1>Moda Express Atacado</h1>
-  <p>Looks direto da fábrica com promoção por tempo limitado!</p>
-  <p>Pedido mínimo R$100 | Sem necessidade de CNPJ | Entregamos para todo o Brasil</p>
-</header>
-
-
-  <div class="banner">
-    <img src="banner.jpg" alt="Banner de Destaque Moda Express" />
-  </div>
-
-  <h2>🔥 Novidades da Semana</h2>
-  <div class="vitrine">
-
-    <div class="produto">
-      <img src="look-inverno-1.jpg.jpeg" alt="Casaco Inverno">
-      <div class="produto-info">
-        <h3>Casaco de Lã Batida</h3>
-        <p class="preco">R$ 119,90</p>
-        <p>Tecido pesado e forrado, ideal para o frio com elegância.</p>
-        <label for="cor">Cor:</label>
-        <select>
-          <option>Whity</option>
-          <option>Black</option>
-          <option>Vermelho</option>
-          <option>Vinho</option>
-        </select>
-        <label for="tamanho">Tamanho:</label>
-        <select>
-          <option>P</option><option>M</option><option>G</option>
-          <option>GG</option><option>G1</option><option>G2</option>
-          <option>G3</option><option>G4</option>
-        </select>
-        <a class="botao-comprar" href="https://wa.me/5511919433294?text=Quero%20o%20Casaco%20de%20Lã%20Batida%20R$119,90">Comprar no WhatsApp</a>
+    <!-- Exemplo de produto -->
+    <div class="product">
+      <img src="look-inverno-1.jpg.jpeg" alt="Casaco Inverno Luxo" />
+      <div class="product-info">
+        <h3>Casaco Inverno Luxo com Gola de Pelúcia</h3>
+        <p class="price">PROMOÇÃO: R$ 119,90</p>
+        <p>Tecido pesado, forrado e com acabamento impecável. Quente e sofisticado!</p>
+        <div class="options">
+          <label>Cor:</label>
+          <select>
+            <option>Whity</option>
+            <option>Black</option>
+            <option>Vermelho</option>
+            <option>Vinho</option>
+          </select>
+          <label>Tamanho:</label>
+          <select>
+            <option>P</option><option>M</option><option>G</option><option>GG</option><option>G1</option><option>G2</option><option>G3</option><option>G4</option>
+          </select>
+        </div>
+        <a href="https://wa.me/5511919433294?text=Tenho%20interesse%20no%20casaco%20inverno%20luxo" class="buy-button" target="_blank">Ver no WhatsApp</a>
       </div>
     </div>
 
-    <!-- Jaquetas R$49,90 -->
-    <div class="produto">
-      <img src="jaqueta-inverno-1.jpg.jpeg" alt="Jaqueta Marrom">
-      <div class="produto-info">
-        <h3>Jaqueta Inverno Casual</h3>
-        <p class="preco">R$ 49,90</p>
-        <p>Casual e estilosa, perfeita para o dia a dia.</p>
-        <label for="cor">Cor:</label>
-        <select>
-          <option>Marrom</option>
-          <option>Cinza</option>
-          <option>Nude</option>
-        </select>
-        <label for="tamanho">Tamanho:</label>
-        <select>
-          <option>P</option><option>M</option><option>G</option>
-          <option>GG</option><option>G1</option><option>G2</option>
-          <option>G3</option><option>G4</option>
-        </select>
-        <a class="botao-comprar" href="https://wa.me/5511919433294?text=Quero%20a%20Jaqueta%20Casual%20R$49,90">Comprar no WhatsApp</a>
-      </div>
-    </div>
+    <!-- Você pode copiar e colar mais blocos .product para mais looks -->
+  </section>
 
-    <!-- Adicione mais produtos abaixo conforme desejar -->
+  <section id="categorias">
+    <h2>✨ Coleções Elegantes</h2>
+    <ul style="list-style: none; text-align: center; font-size: 1.2em; padding: 0;">
+      <li><strong>👗 Vestidos</strong> — elegância para todas as ocasiões</li>
+      <li><strong>👚 Blusas</strong> — do básico ao refinado</li>
+      <li><strong>👖 Calças</strong> — conforto e sofisticação</li>
+      <li><strong>🧵 Moda Plus Size</strong> — estilo em todos os tamanhos</li>
+      <li><strong>🧣 Inverno Luxo</strong> — casacos premium e forrados</li>
+      <li><strong>👠 Conjuntos</strong> — looks completos e prontos para arrasar</li>
+    </ul>
+  </section>
 
+  <div class="checkout-link">
+    <a href="checkout.html">🛒 Ir para o Carrinho / Finalizar Pedido</a>
   </div>
 
-  <h2>✨ Categorias em Destaque</h2>
-  <div class="vitrine">
-    <div class="produto"><h3 style="text-align:center;">👗 Vestidos</h3><p style="text-align:center;">Elegância para todas as ocasiões.</p></div>
-    <div class="produto"><h3 style="text-align:center;">🧥 Casacos</h3><p style="text-align:center;">Proteção e sofisticação no frio.</p></div>
-    <div class="produto"><h3 style="text-align:center;">👖 Calças</h3><p style="text-align:center;">Estilo do casual ao chic.</p></div>
-    <div class="produto"><h3 style="text-align:center;">👚 Blusas</h3><p style="text-align:center;">Conforto com charme.</p></div>
-    <div class="produto"><h3 style="text-align:center;">👠 Conjuntos</h3><p style="text-align:center;">Looks prontos para arrasar.</p></div>
-    <div class="produto"><h3 style="text-align:center;">➕ Plus Size</h3><p style="text-align:center;">Moda para todos os corpos.</p></div>
-  </div>
-
-  <footer>
-    <p>Siga-nos no <a href="https://www.instagram.com/modaexpress_atacado" target="_blank">Instagram @modaexpress_atacado</a></p>
-    <p>Moda Express Atacado © 2025 - Todos os direitos reservados.</p>
-  </footer>
-
+  <!-- Botão flutuante WhatsApp -->
+  <a href="https://wa.me/5511919433294" class="whatsapp-float" title="Fale conosco no WhatsApp" target="_blank">💬</a>
 </body>
 </html>
