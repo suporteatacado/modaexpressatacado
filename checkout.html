@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Moda Express Atacado</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #ff66b2;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      text-align: center;
+      padding: 30px;
+    }
+    header img {
+      max-width: 180px;
+      height: auto;
+    }
+    h1 {
+      margin: 10px 0 5px;
+      font-size: 2em;
+    }
+    .product {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      color: #333;
+      margin: 30px auto;
+      max-width: 900px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      padding: 20px;
+    }
+    .product img {
+      width: 100%;
+      max-width: 350px;
+      border-radius: 10px;
+    }
+    .product-info {
+      flex: 1;
+      padding: 20px;
+    }
+    .product-info h3 {
+      color: #e91e63;
+    }
+    .price {
+      font-size: 1.5em;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+    .options label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    .options select {
+      padding: 5px;
+      font-size: 1em;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    .buy-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #e91e63;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1.1em;
+      text-decoration: none;
+    }
+    .checkout-link {
+      display: block;
+      text-align: center;
+      margin-top: 40px;
+    }
+    .checkout-link a {
+      background: #fff;
+      color: #e91e63;
+      padding: 12px 24px;
+      font-size: 1.2em;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 8px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo.jpeg" alt="Moda Express Logo" />
+    <h1>Moda Express Atacado</h1>
+    <p>Looks direto da fábrica com promoção por tempo limitado!</p>
+    <p>Pedido mínimo R$ 100,00 | Sem necessidade de CNPJ | Entregamos para todo o Brasil</p>
+  </header>
+
+  <section id="casacos">
+    <h2 style="text-align:center; color: white;">🧥 Casacos</h2>
+    <div class="product">
+      <img src="look-inverno-1.jpg.jpeg" alt="Casaco Inverno Luxo" />
+      <div class="product-info">
+        <h3>Casaco Inverno Luxo com Gola de Pelúcia</h3>
+        <p class="price">PROMOÇÃO: R$ 119,90</p>
+        <p>Tecido encorpado, com forro interno acolchoado e gola de pelúcia. Perfeito para os dias frios com muito estilo.</p>
+        <div class="options">
+          <label for="cor">Escolha a cor:</label>
+          <select id="cor">
+            <option>Bege</option>
+            <option>Preto</option>
+            <option>Off-White</option>
+            <option>Marrom</option>
+          </select>
+          <label for="tamanho">Escolha o tamanho:</label>
+          <select id="tamanho">
+            <option>P</option>
+            <option>M</option>
+            <option>G</option>
+            <option>GG</option>
+            <option>G1</option>
+            <option>G2</option>
+            <option>G3</option>
+            <option>G4</option>
+          </select>
+        </div>
+        <a href="https://wa.me/5511919433294?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20Casaco%20Inverno%20Luxo%20com%20Gola%20de%20Pel%C3%BAcia.%20Gostaria%20de%20verificar%20cores%20e%20tamanhos%20dispon%C3%ADveis." target="_blank" class="buy-button">
+          Ver opções no WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="checkout-link">
+    <a href="checkout.html">Ir para o Carrinho / Finalizar Pedido</a>
+  </div>
+</body>
+</html>
