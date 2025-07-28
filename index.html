@@ -2,220 +2,215 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Moda Express Atacado</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Georgia', serif;
-      background: #fff6f9;
-      color: #222;
       margin: 0;
-      padding: 0;
+      font-family: 'Playfair Display', serif;
+      background: #fff6f9;
+      color: #333;
     }
+
     header {
+      background-color: #ff66b2;
       text-align: center;
-      padding: 30px;
-      background: #ff66b2;
-      color: white;
+      padding: 30px 20px;
     }
+
     header img {
       max-width: 180px;
       height: auto;
     }
-    h1 {
-      margin: 10px 0 5px;
+
+    header h1 {
+      color: white;
+      margin: 15px 0 5px;
       font-size: 2.5em;
     }
-    h2 {
-      font-size: 2em;
-      color: #d63384;
-      margin: 40px 0 20px;
-      text-align: center;
+
+    header p {
+      color: #ffe6f0;
+      font-size: 1.1em;
     }
-    .product {
+
+    .banner {
+      background-image: url('banner.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 350px;
       display: flex;
-      flex-wrap: wrap;
       align-items: center;
       justify-content: center;
-      background: #fff;
-      color: #333;
-      margin: 20px auto;
-      max-width: 900px;
-      border-radius: 15px;
+      color: white;
+      font-size: 2em;
+      text-shadow: 2px 2px 8px #000;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2em;
+      color: #b30059;
+      margin: 50px 0 20px;
+    }
+
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      padding: 0 20px;
+    }
+
+    .product {
+      background: white;
+      border-radius: 12px;
       box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      padding: 20px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .product:hover {
-      transform: scale(1.02);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-    }
-    .product img {
-      width: 100%;
-      max-width: 350px;
-      border-radius: 10px;
+      max-width: 280px;
+      overflow: hidden;
       transition: transform 0.3s ease;
     }
-    .product img:hover {
-      transform: scale(1.05);
+
+    .product:hover {
+      transform: scale(1.03);
     }
-    .product-info {
-      flex: 1;
-      padding: 20px;
-    }
-    .product-info h3 {
-      color: #b30059;
-      font-size: 1.4em;
-    }
-    .price {
-      font-size: 1.5em;
-      font-weight: bold;
-      margin: 10px 0;
-      color: #e91e63;
-    }
-    .options label {
+
+    .product img {
+      width: 100%;
       display: block;
-      margin-top: 10px;
+    }
+
+    .product-info {
+      padding: 15px;
+      text-align: center;
+    }
+
+    .product-info h3 {
+      font-size: 1.2em;
+      margin-bottom: 10px;
+      color: #d63384;
+    }
+
+    .product-info p {
+      margin: 5px 0;
+    }
+
+    .price {
       font-weight: bold;
+      color: #e91e63;
+      font-size: 1.2em;
     }
-    .options select {
-      padding: 5px;
-      font-size: 1em;
-      margin-top: 5px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
+
     .buy-button {
       display: inline-block;
-      margin-top: 20px;
-      padding: 10px 20px;
+      margin-top: 15px;
+      padding: 8px 18px;
       background: #e91e63;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 1.1em;
+      color: white;
       text-decoration: none;
-      transition: background 0.3s ease;
-    }
-    .buy-button:hover {
-      background: #c2185b;
-    }
-    .checkout-link {
-      display: block;
-      text-align: center;
-      margin-top: 40px;
-    }
-    .checkout-link a {
-      background: #d63384;
-      color: #fff;
-      padding: 12px 24px;
-      font-size: 1.2em;
+      border-radius: 6px;
       font-weight: bold;
-      text-decoration: none;
-      border-radius: 8px;
-      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-      transition: background 0.3s ease;
+      transition: background 0.3s;
     }
-    .checkout-link a:hover {
+
+    .buy-button:hover {
       background: #ad1964;
+    }
+
+    .categories {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      text-align: center;
+      gap: 25px;
+      padding: 0 20px 50px;
+    }
+
+    .category {
+      background: #ffe6f0;
+      border-radius: 10px;
+      padding: 20px;
+      width: 180px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+
+    .category:hover {
+      transform: translateY(-5px);
+    }
+
+    footer {
+      background: #ff66b2;
+      color: white;
+      text-align: center;
+      padding: 30px 10px;
+      font-size: 0.9em;
+    }
+
+    .whatsapp-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      color: white;
+      border-radius: 50%;
+      width: 55px;
+      height: 55px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 28px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
   </style>
 </head>
 <body>
+
   <header>
-    <img src="logo.jpeg" alt="Moda Express Logo" />
+    <img src="logo.jpeg" alt="Logo Moda Express Atacado" />
     <h1>Moda Express Atacado</h1>
-    <p>Looks direto da fábrica com promoção por tempo limitado!</p>
-    <p>Pedido mínimo R$ 100,00 | Sem necessidade de CNPJ | Entregamos para todo o Brasil</p>
+    <p>Looks direto da fábrica com promoção por tempo limitado</p>
+    <p>Pedido mínimo R$ 100 | Sem CNPJ | Entrega para todo o Brasil</p>
   </header>
 
-  <section id="casacos">
-    <h2>🧥 Casacos</h2>
-    <div class="product">
-      <img src="look-inverno-1.jpg.jpeg" alt="Casaco Inverno Luxo" />
-      <div class="product-info">
-        <h3>Casaco Inverno Luxo com Gola de Pelúcia</h3>
-        <p class="price">PROMOÇÃO: R$ 119,90</p>
-        <p>Tecido encorpado, com forro interno acolchoado e gola de pelúcia. Perfeito para os dias frios com muito estilo.</p>
-        <div class="options">
-          <label for="cor">Escolha a cor:</label>
-          <select id="cor">
-            <option>Bege</option>
-            <option>Preto</option>
-            <option>Off-White</option>
-            <option>Marrom</option>
-          </select>
-          <label for="tamanho">Escolha o tamanho:</label>
-          <select id="tamanho">
-            <option>P</option>
-            <option>M</option>
-            <option>G</option>
-            <option>GG</option>
-            <option>G1</option>
-            <option>G2</option>
-            <option>G3</option>
-            <option>G4</option>
-          </select>
-        </div>
-        <a href="https://wa.me/5511919433294?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20Casaco%20Inverno%20Luxo%20com%20Gola%20de%20Pel%C3%BAcia." target="_blank" class="buy-button">
-          Ver opções no WhatsApp
-        </a>
-      </div>
-    </div>
-
-    <div class="product">
-      <img src="jaqueta-inverno-1.jpg.jpeg" alt="Jaqueta Inverno 1" />
-      <div class="product-info">
-        <h3>Jaqueta Elegante Feminina Inverno</h3>
-        <p class="price">R$ 139,90</p>
-        <p>Modelo sofisticado, tecido de qualidade premium, ideal para dias frios com estilo. Vários tamanhos e cores disponíveis.</p>
-        <a href="https://wa.me/5511919433294?text=Tenho%20interesse%20na%20Jaqueta%20Elegante%20Inverno%201" class="buy-button">Comprar no WhatsApp</a>
-      </div>
-    </div>
-    <div class="product">
-      <img src="jaqueta-inverno-2.jpg.jpeg" alt="Jaqueta Inverno 2" />
-      <div class="product-info">
-        <h3>Jaqueta Inverno Clássica com Cinto</h3>
-        <p class="price">R$ 129,90</p>
-        <p>Com corte clássico e cinto para ajustar, essa jaqueta valoriza a silhueta com elegância e conforto.</p>
-        <a href="https://wa.me/5511919433294?text=Tenho%20interesse%20na%20Jaqueta%20Clássica%20com%20Cinto" class="buy-button">Comprar no WhatsApp</a>
-      </div>
-    </div>
-    <div class="product">
-      <img src="jaqueta-inverno-3.jpg.jpeg" alt="Jaqueta Inverno 3" />
-      <div class="product-info">
-        <h3>Jaqueta Forrada Luxo</h3>
-        <p class="price">R$ 149,90</p>
-        <p>Alta proteção contra o frio, com acabamento refinado. Uma peça indispensável para o guarda-roupa de inverno.</p>
-        <a href="https://wa.me/5511919433294?text=Tenho%20interesse%20na%20Jaqueta%20Forrada%20Luxo" class="buy-button">Comprar no WhatsApp</a>
-      </div>
-    </div>
-    <div class="product">
-      <img src="jaqueta-inverno-4.jpg.jpeg" alt="Jaqueta Inverno 4" />
-      <div class="product-info">
-        <h3>Jaqueta Inverno Casual Feminina</h3>
-        <p class="price">R$ 119,90</p>
-        <p>Ideal para o dia a dia com conforto e beleza. Combina com diversos estilos e ocasiões.</p>
-        <a href="https://wa.me/5511919433294?text=Tenho%20interesse%20na%20Jaqueta%20Inverno%20Casual" class="buy-button">Comprar no WhatsApp</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="categorias">
-    <h2>✨ Coleções Elegantes</h2>
-    <ul style="list-style: none; text-align: center; font-size: 1.2em; padding: 0;">
-      <li><strong>👗 Vestidos</strong> — elegância para todas as ocasiões</li>
-      <li><strong>👚 Blusas</strong> — do básico ao refinado</li>
-      <li><strong>👖 Calças</strong> — conforto e sofisticação</li>
-      <li><strong>🧵 Moda Plus Size</strong> — estilo em todos os tamanhos</li>
-      <li><strong>🧣 Inverno Luxo</strong> — casacos premium e forrados</li>
-      <li><strong>👠 Conjuntos</strong> — looks completos e prontos para arrasar</li>
-    </ul>
-  </section>
-
-  <div class="checkout-link">
-    <a href="checkout.html">🛒 Ir para o Carrinho / Finalizar Pedido</a>
+  <div class="banner">
+    ✨ NOVA COLEÇÃO DE INVERNO DISPONÍVEL
   </div>
+
+  <h2 class="section-title">🔥 Novidades da Semana</h2>
+  <div class="products">
+    <div class="product">
+      <img src="look-inverno-1.jpg.jpeg" alt="Casaco Inverno" />
+      <div class="product-info">
+        <h3>Casaco Inverno Luxo</h3>
+        <p class="price">R$ 119,90</p>
+        <p>Disponível: P ao G4</p>
+        <a href="https://wa.me/5511919433294?text=Tenho%20interesse%20no%20Casaco%20Inverno%20Luxo" class="buy-button" target="_blank">Comprar</a>
+      </div>
+    </div>
+    <!-- Adicione mais produtos aqui -->
+  </div>
+
+  <h2 class="section-title">💖 Categorias</h2>
+  <div class="categories">
+    <div class="category"><strong>👗 Vestidos</strong></div>
+    <div class="category"><strong>👚 Blusas</strong></div>
+    <div class="category"><strong>🧥 Casacos</strong></div>
+    <div class="category"><strong>👖 Calças</strong></div>
+    <div class="category"><strong>🧣 Inverno Luxo</strong></div>
+    <div class="category"><strong>🌟 Plus Size</strong></div>
+    <div class="category"><strong>👠 Conjuntos</strong></div>
+  </div>
+
+  <footer>
+    <p>Siga no Instagram: <a href="https://www.instagram.com/modaexpress_atacado" target="_blank" style="color: #fff; text-decoration: underline;">@modaexpress_atacado</a></p>
+    <p>&copy; 2025 Moda Express Atacado - Todos os direitos reservados</p>
+  </footer>
+
+  <a class="whatsapp-button" href="https://wa.me/5511919433294" target="_blank">💬</a>
+
 </body>
 </html>
