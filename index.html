@@ -1,94 +1,99 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Moda Express Atacado - Casacos Gominhos</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Moda Express Atacado</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+    }
+  </style>
 </head>
-<body class="bg-gray-100 text-gray-800">
-
-  <!-- Header -->
-  <header class="bg-white shadow-md p-4 flex justify-between items-center">
-    <h1 class="text-xl font-bold text-pink-700">Moda Express Atacado</h1>
-    <a href="https://wa.me/5511919433294" target="_blank" class="bg-green-500 text-white px-4 py-2 rounded">Fale Conosco</a>
+<body class="bg-white text-gray-800">
+  <!-- Cabeçalho -->
+  <header class="bg-black text-white p-4 text-center text-xl font-semibold sticky top-0 z-50">
+    Moda Express Atacado
   </header>
 
   <!-- Banner Principal -->
-  <section class="bg-pink-100 py-6 text-center">
-    <h2 class="text-2xl font-semibold">Casacos de Gominhos</h2>
-    <p class="text-gray-600">Estilo e conforto para os dias mais frios. Aproveite por apenas <span class="font-bold text-pink-700">R$99,90</span>!</p>
+  <section class="w-full">
+    <img src="imagens/banner-principal.jpg" alt="Moda Express Banner" class="w-full h-auto object-cover" />
   </section>
 
-  <!-- Sessão de Produtos -->
-  <section class="p-6 grid md:grid-cols-3 gap-6">
-    <!-- Produto 1 - White -->
-    <div class="bg-white rounded-xl shadow-md overflow-hidden">
-      <img src="./imagens/casaco-white.jpg" alt="Casaco Gominhos White" class="w-full h-80 object-cover">
-      <div class="p-4">
-        <h3 class="text-lg font-semibold">Casaco Gominhos - White</h3>
-        <p class="text-sm text-gray-600 mb-2">Casaco peluciado com textura de gominhos, extremamente quentinho e estiloso. Ideal para o inverno.</p>
-        <p class="font-bold text-pink-700">R$ 99,90</p>
-        <!-- Cores -->
-        <div class="mt-2">
-          <span class="font-medium text-gray-700">Cores:</span>
-          <div class="flex gap-2 mt-1">
-            <span class="w-5 h-5 rounded-full bg-white border"></span>
-            <span class="w-5 h-5 rounded-full bg-yellow-800"></span>
-          </div>
-        </div>
-        <!-- Tamanhos -->
-        <div class="mt-2">
-          <span class="font-medium text-gray-700">Tamanhos:</span>
-          <div class="flex gap-2 mt-1">
-            <span class="bg-gray-200 px-2 py-1 rounded text-sm">P</span>
-            <span class="bg-gray-200 px-2 py-1 rounded text-sm">M</span>
-            <span class="bg-gray-200 px-2 py-1 rounded text-sm">G</span>
-            <span class="bg-gray-200 px-2 py-1 rounded text-sm">GG</span>
-            <span class="bg-gray-200 px-2 py-1 rounded text-sm">G1</span>
-          </div>
-        </div>
-        <!-- Botão de Compra -->
-        <a href="https://wa.me/5511919433294?text=Olá!%20Gostaria%20de%20comprar%20o%20Casaco%20Gominhos%20White" target="_blank" class="block mt-4 bg-green-500 text-white text-center py-2 rounded">Comprar via WhatsApp</a>
-      </div>
-    </div>
+  <!-- Novidades da Semana -->
+  <section class="px-4 py-6">
+    <h2 class="text-xl md:text-2xl font-bold text-center mb-6 text-pink-600">Novidades da Semana</h2>
+    <div class="grid gap-6 md:grid-cols-2">
 
-    <!-- Produto 2 - Camurça -->
-    <div class="bg-white rounded-xl shadow-md overflow-hidden">
-      <img src="./imagens/casaco-camurca.jpg" alt="Casaco Gominhos Camurça" class="w-full h-80 object-cover">
-      <div class="p-4">
-        <h3 class="text-lg font-semibold">Casaco Gominhos - Camurça</h3>
-        <p class="text-sm text-gray-600 mb-2">Modelo sofisticado e quentinho com toque macio. Uma peça versátil para os dias frios.</p>
-        <p class="font-bold text-pink-700">R$ 99,90</p>
-        <!-- Cores -->
-        <div class="mt-2">
-          <span class="font-medium text-gray-700">Cores:</span>
-          <div class="flex gap-2 mt-1">
-            <span class="w-5 h-5 rounded-full bg-yellow-800"></span>
-            <span class="w-5 h-5 rounded-full bg-white border"></span>
+      <!-- Casaco de Gominhos White -->
+      <div class="border rounded-2xl overflow-hidden shadow hover:shadow-lg transition-all">
+        <img src="imagens/casaco-white.jpg" alt="Casaco de Gominhos Branco" class="w-full h-auto object-cover" />
+        <div class="p-4">
+          <h3 class="text-lg font-semibold">Casaco de Gominhos - White</h3>
+          <p class="text-pink-600 text-xl font-bold mt-2">R$ 99,90</p>
+          <p class="mt-2 text-sm">Casaco extremamente quentinho, macio e estiloso. Ideal para os dias frios com muito conforto e elegância.</p>
+          <div class="mt-4">
+            <p class="font-semibold mb-1">Tamanhos disponíveis:</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="border px-3 py-1 rounded-full text-sm">P</span>
+              <span class="border px-3 py-1 rounded-full text-sm">M</span>
+              <span class="border px-3 py-1 rounded-full text-sm">G</span>
+              <span class="border px-3 py-1 rounded-full text-sm">GG</span>
+              <span class="border px-3 py-1 rounded-full text-sm">G1</span>
+            </div>
+            <p class="font-semibold mt-4 mb-1">Cores:</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-white border px-3 py-1 rounded-full text-sm">White</span>
+            </div>
           </div>
+          <a href="https://wa.me/5511919433294?text=Olá! Tenho interesse no Casaco de Gominhos - White." target="_blank" class="mt-4 inline-block bg-green-500 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-green-600">Comprar via WhatsApp</a>
         </div>
-        <!-- Tamanhos -->
-        <div class="mt-2">
-          <span class="font-medium text-gray-700">Tamanhos:</span>
-          <div class="flex gap-2 mt-1">
-            <span class="bg-gray-200 px-2 py-1 rounded text-sm">P</span>
-            <span class="bg-gray-200 px-2 py-1 rounded text-sm">M</span>
-            <span class="bg-gray-200 px-2 py-1 rounded text-sm">G</span>
-            <span class="bg-gray-200 px-2 py-1 rounded text-sm">GG</span>
-            <span class="bg-gray-200 px-2 py-1 rounded text-sm">G1</span>
-          </div>
-        </div>
-        <!-- Botão de Compra -->
-        <a href="https://wa.me/5511919433294?text=Olá!%20Gostaria%20de%20comprar%20o%20Casaco%20Gominhos%20Camurça" target="_blank" class="block mt-4 bg-green-500 text-white text-center py-2 rounded">Comprar via WhatsApp</a>
       </div>
+
+      <!-- Casaco de Gominhos Camurça -->
+      <div class="border rounded-2xl overflow-hidden shadow hover:shadow-lg transition-all">
+        <img src="imagens/casaco-camurca.jpg" alt="Casaco de Gominhos Camurça" class="w-full h-auto object-cover" />
+        <div class="p-4">
+          <h3 class="text-lg font-semibold">Casaco de Gominhos - Camurça</h3>
+          <p class="text-pink-600 text-xl font-bold mt-2">R$ 99,90</p>
+          <p class="mt-2 text-sm">Com textura única em gominhos, esse casaco oferece muito estilo, aquecimento e sofisticação para os dias frios.</p>
+          <div class="mt-4">
+            <p class="font-semibold mb-1">Tamanhos disponíveis:</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="border px-3 py-1 rounded-full text-sm">P</span>
+              <span class="border px-3 py-1 rounded-full text-sm">M</span>
+              <span class="border px-3 py-1 rounded-full text-sm">G</span>
+              <span class="border px-3 py-1 rounded-full text-sm">GG</span>
+              <span class="border px-3 py-1 rounded-full text-sm">G1</span>
+            </div>
+            <p class="font-semibold mt-4 mb-1">Cores:</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-yellow-800 text-white px-3 py-1 rounded-full text-sm">Camurça</span>
+            </div>
+          </div>
+          <a href="https://wa.me/5511919433294?text=Olá! Tenho interesse no Casaco de Gominhos - Camurça." target="_blank" class="mt-4 inline-block bg-green-500 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-green-600">Comprar via WhatsApp</a>
+        </div>
+      </div>
+
     </div>
   </section>
 
   <!-- Rodapé -->
-  <footer class="bg-white text-center text-sm text-gray-500 py-4 mt-6">
-    &copy; 2025 Moda Express Atacado. Todos os direitos reservados.
+  <footer class="text-center text-sm text-gray-500 p-4 mt-10">
+    <p>© 2025 Moda Express Atacado. Todos os direitos reservados.</p>
+    <p>
+      <a href="https://instagram.com/sualoja" target="_blank" class="text-pink-500 underline">Siga-nos no Instagram</a>
+    </p>
   </footer>
 
+  <!-- Botão flutuante do WhatsApp -->
+  <a href="https://wa.me/5511919433294" class="fixed bottom-4 right-4 bg-green-500 p-3 rounded-full shadow-lg hover:bg-green-600 z-50" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" class="w-6 h-6">
+  </a>
 </body>
 </html>
