@@ -15,30 +15,25 @@
       color: #333;
     }
     header {
-      background-color: #ff4d6d;
-      color: white;
-      padding: 20px 10px;
-      text-align: center;
-      position: relative;
-    }
-    header img {
-      max-width: 150px;
-      border-radius: 10px;
-    }
-    nav {
-      position: sticky;
-      top: 0;
-      background: white;
-      padding: 10px 0;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      text-align: center;
-      z-index: 100;
-    }
-    nav a {
-      margin: 0 15px;
-      color: #ff4d6d;
-      text-decoration: none;
-      font-weight: bold;
+    <header>
+  <img src="logo.jpeg.png" alt="Moda Express Logo" />
+  <h1>Moda Express Atacado</h1>
+  <p>Looks direto da fábrica com preços imbatíveis!</p>
+
+  <!-- Botão hamburguer -->
+  <button id="menu-btn" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-links">
+    &#9776;
+  </button>
+</header>
+
+<nav id="nav-links" class="nav-links">
+  <a href="#categorias">Categorias</a>
+  <a href="#bestsellers">Mais Vendidos</a>
+  <a href="#gominhos">Casacos Gominhos</a>
+  <a href="#contato">Contato</a>
+  <a href="https://www.instagram.com/modaexpress_atacado" target="_blank">Instagram</a>
+</nav>
+
     }
     .banner {
       background: linear-gradient(to right, #ff4d6d, #ff8aa1);
