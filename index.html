@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Moda Express Atacado</title>
   <style>
     * {
@@ -15,32 +15,64 @@
       color: #333;
     }
     header {
-    <header>
-  <img src="logo.jpeg.png" alt="Moda Express Logo" />
-  <h1>Moda Express Atacado</h1>
-  <p>Looks direto da fábrica com preços imbatíveis!</p>
+      background-color: #ff4d6d;
+      color: white;
+      padding: 20px 10px;
+      text-align: center;
+      position: relative;
+    }
+    header img {
+      max-width: 150px;
+      border-radius: 10px;
+      display: block;
+      margin: 0 auto 10px;
+    }
+    header h1 {
+      margin: 0 0 5px;
+      font-size: 1.8em;
+    }
+    header p {
+      margin: 0;
+      font-size: 1em;
+    }
 
-  <!-- Botão hamburguer -->
-  <button id="menu-btn" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-links">
-    &#9776;
-  </button>
-</header>
+    /* Botão hamburguer */
+    #menu-btn {
+      display: none;
+      background: transparent;
+      border: none;
+      font-size: 2.2em;
+      color: white;
+      position: absolute;
+      top: 25px;
+      right: 15px;
+      cursor: pointer;
+      z-index: 110;
+    }
 
-<nav id="nav-links" class="nav-links">
-  <a href="#categorias">Categorias</a>
-  <a href="#bestsellers">Mais Vendidos</a>
-  <a href="#gominhos">Casacos Gominhos</a>
-  <a href="#contato">Contato</a>
-  <a href="https://www.instagram.com/modaexpress_atacado" target="_blank">Instagram</a>
-</nav>
-
+    nav {
+      position: sticky;
+      top: 0;
+      background: white;
+      padding: 10px 0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      text-align: center;
+      z-index: 100;
+    }
+    nav a {
+      margin: 0 15px;
+      color: #ff4d6d;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1em;
     }
     .banner {
       background: linear-gradient(to right, #ff4d6d, #ff8aa1);
       color: white;
-      padding: 10px;
+      padding: 15px 10px;
       text-align: center;
       animation: pulse 1.5s infinite;
+      font-size: 1.1em;
     }
     @keyframes pulse {
       0% { opacity: 1; }
@@ -54,6 +86,7 @@
     h2 {
       color: #ff4d6d;
       margin-bottom: 20px;
+      font-size: 1.6em;
     }
     .categories button {
       margin: 5px;
@@ -63,6 +96,11 @@
       border: none;
       border-radius: 8px;
       cursor: pointer;
+      font-size: 1em;
+      transition: background-color 0.3s ease;
+    }
+    .categories button:hover {
+      background: #e04057;
     }
     .gallery, .bestsellers, .gominhos-gallery {
       display: grid;
@@ -70,16 +108,17 @@
       gap: 15px;
       margin-top: 20px;
     }
-    .product {
+    .product, .produto {
       position: relative;
       background: white;
       border-radius: 10px;
       padding: 10px;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
-    .product img {
+    .product img, .produto img {
       width: 100%;
       border-radius: 10px;
+      display: block;
     }
     .promo-tag {
       position: absolute;
@@ -90,26 +129,36 @@
       padding: 5px 10px;
       border-radius: 6px;
       font-size: 0.8em;
+      font-weight: bold;
     }
     .product .price {
       color: #ff4d6d;
       font-weight: bold;
       margin-top: 8px;
+      font-size: 1.1em;
     }
     .product .options {
       margin-top: 10px;
+      font-size: 0.9em;
     }
     .options button {
-      margin: 3px;
+      margin: 3px 5px 3px 0;
       padding: 8px 12px;
       border: none;
       border-radius: 5px;
       cursor: pointer;
       background: #eee;
+      transition: background-color 0.3s ease;
+      font-size: 0.9em;
+    }
+    .options button:hover {
+      background: #ff4d6d;
+      color: white;
     }
     .timer {
       font-size: 1.3em;
       margin-top: 10px;
+      font-weight: bold;
     }
     .buttons a {
       display: inline-block;
@@ -119,14 +168,21 @@
       color: white;
       border-radius: 8px;
       font-weight: bold;
+      font-size: 1.1em;
+      transition: background-color 0.3s ease;
     }
     .whatsapp { background: #25d366; }
+    .whatsapp:hover { background: #1ebe57; }
     .instagram { background: #e1306c; }
+    .instagram:hover { background: #c52863; }
     .testimonials {
       max-width: 600px;
-      margin: auto;
+      margin: 40px auto;
       font-style: italic;
       color: #444;
+      font-size: 1.1em;
+      line-height: 1.5em;
+      padding: 0 15px;
     }
     footer {
       text-align: center;
@@ -135,6 +191,100 @@
       color: #777;
       font-size: 0.9em;
     }
+
+    /* MENU HAMBURGUER */
+    #menu-btn {
+      display: none;
+      background: transparent;
+      border: none;
+      font-size: 2.5em;
+      color: white;
+      position: absolute;
+      top: 25px;
+      right: 15px;
+      cursor: pointer;
+      z-index: 110;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      background: white;
+      padding: 10px 0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      text-align: center;
+      z-index: 100;
+      display: block;
+    }
+    nav a {
+      margin: 0 15px;
+      color: #ff4d6d;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+
+    /* RESPONSIVO PARA CELULAR */
+    @media (max-width: 768px) {
+      #menu-btn {
+        display: block;
+      }
+      nav {
+        position: fixed;
+        top: 0;
+        right: 0;
+        background: white;
+        height: 100vh;
+        width: 70%;
+        max-width: 300px;
+        padding-top: 60px;
+        box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        text-align: left;
+        overflow-y: auto;
+        z-index: 105;
+      }
+      nav.show {
+        transform: translateX(0);
+      }
+      nav a {
+        display: block;
+        margin: 15px 20px;
+        font-size: 1.2em;
+      }
+
+      /* Ajuste no header para manter conteúdo visível */
+      header h1 {
+        font-size: 1.5em;
+      }
+      header p {
+        font-size: 0.9em;
+      }
+
+      .banner {
+        font-size: 1em;
+        padding: 12px 10px;
+      }
+
+      .categories button {
+        padding: 14px 18px;
+        font-size: 1.1em;
+      }
+
+      section {
+        padding: 20px 10px;
+      }
+
+      .gallery, .bestsellers, .gominhos-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      }
+
+      .options button {
+        padding: 10px 14px;
+        font-size: 1em;
+      }
+    }
   </style>
 </head>
 <body>
@@ -142,17 +292,19 @@
     <img src="logo.jpeg.png" alt="Moda Express Logo" />
     <h1>Moda Express Atacado</h1>
     <p>Looks direto da fábrica com preços imbatíveis!</p>
+    <!-- Botão hamburguer -->
+    <button id="menu-btn" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-links">&#9776;</button>
   </header>
 
-  <div class="banner">🚚 FRETE GRÁTIS para pedidos acima de R$200 - Aproveite!</div>
-
-  <nav>
+  <nav id="nav-links">
     <a href="#categorias">Categorias</a>
     <a href="#bestsellers">Mais Vendidos</a>
     <a href="#gominhos">Casacos Gominhos</a>
     <a href="#contato">Contato</a>
     <a href="https://www.instagram.com/modaexpress_atacado" target="_blank">Instagram</a>
   </nav>
+
+  <div class="banner">🚚 FRETE GRÁTIS para pedidos acima de R$200 - Aproveite!</div>
 
   <section id="categorias">
     <h2>🧥 Categorias</h2>
@@ -185,76 +337,79 @@
       ⏳ Promoção acaba em: <span id="countdown">Carregando...</span>
     </div>
   </section>
-<section id="blazers">
-  <h2>🧥 Blazers de Inverno - R$ 49,90</h2>
-  <div class="products">
-    <div class="product">
-      <img src="blazerinverno-1.jpg.jpeg" alt="Blazer Inverno 1">
-      <div class="price">R$ 49,90</div>
-      <div class="options"><strong>Tamanhos:</strong><br>
-        <button>P</button><button>M</button><button>G</button><button>GG</button>
-        <button>G1</button><button>G2</button><button>G3</button><button>G4</button>
+
+  <section id="blazers">
+    <h2>🧥 Blazers de Inverno - R$ 49,90</h2>
+    <div class="products">
+      <div class="product">
+        <img src="blazerinverno-1.jpg.jpeg" alt="Blazer Inverno 1" />
+        <div class="price">R$ 49,90</div>
+        <div class="options"><strong>Tamanhos:</strong><br />
+          <button>P</button><button>M</button><button>G</button><button>GG</button>
+          <button>G1</button><button>G2</button><button>G3</button><button>G4</button>
+        </div>
       </div>
-    </div>
-    <div class="product">
-      <img src="blazerinverno-2.jpg.jpeg" alt="Blazer Inverno 2">
-      <div class="price">R$ 49,90</div>
-      <div class="options"><strong>Tamanhos:</strong><br>
-        <button>P</button><button>M</button><button>G</button><button>GG</button>
-        <button>G1</button><button>G2</button><button>G3</button><button>G4</button>
+      <div class="product">
+        <img src="blazerinverno-2.jpg.jpeg" alt="Blazer Inverno 2" />
+        <div class="price">R$ 49,90</div>
+        <div class="options"><strong>Tamanhos:</strong><br />
+          <button>P</button><button>M</button><button>G</button><button>GG</button>
+          <button>G1</button><button>G2</button><button>G3</button><button>G4</button>
+        </div>
       </div>
-    </div>
-    <div class="product">
-      <img src="blazerinverno-3.jpg.jpeg" alt="Blazer Inverno 3">
-      <div class="price">R$ 49,90</div>
-      <div class="options"><strong>Tamanhos:</strong><br>
-        <button>P</button><button>M</button><button>G</button><button>GG</button>
-        <button>G1</button><button>G2</button><button>G3</button><button>G4</button>
+      <div class="product">
+        <img src="blazerinverno-3.jpg.jpeg" alt="Blazer Inverno 3" />
+        <div class="price">R$ 49,90</div>
+        <div class="options"><strong>Tamanhos:</strong><br />
+          <button>P</button><button>M</button><button>G</button><button>GG</button>
+          <button>G1</button><button>G2</button><button>G3</button><button>G4</button>
+        </div>
       </div>
-    </div>
-    <div class="product">
-      <img src="blazerinverno-4.jpg.jpeg" alt="Blazer Inverno 4">
-      <div class="price">R$ 49,90</div>
-      <div class="options"><strong>Tamanhos:</strong><br>
-        <button>P</button><button>M</button><button>G</button><button>GG</button>
-        <button>G1</button><button>G2</button><button>G3</button><button>G4</button>
+      <div class="product">
+        <img src="blazerinverno-4.jpg.jpeg" alt="Blazer Inverno 4" />
+        <div class="price">R$ 49,90</div>
+        <div class="options"><strong>Tamanhos:</strong><br />
+          <button>P</button><button>M</button><button>G</button><button>GG</button>
+          <button>G1</button><button>G2</button><button>G3</button><button>G4</button>
+        </div>
       </div>
-    </div>
-    <div class="product">
-      <img src="blazerinverno-5.jpg.jpeg" alt="Blazer Inverno 5">
-      <div class="price">R$ 49,90</div>
-      <div class="options"><strong>Tamanhos:</strong><br>
-        <button>P</button><button>M</button><button>G</button><button>GG</button>
-        <button>G1</button><button>G2</button><button>G3</button><button>G4</button>
+      <div class="product">
+        <img src="blazerinverno-5.jpg.jpeg" alt="Blazer Inverno 5" />
+        <div class="price">R$ 49,90</div>
+        <div class="options"><strong>Tamanhos:</strong><br />
+          <button>P</button><button>M</button><button>G</button><button>GG</button>
+          <button>G1</button><button>G2</button><button>G3</button><button>G4</button>
+        </div>
       </div>
-    </div>
-    <div class="product">
-      <img src="blazerinverno-6.jpg.jpeg" alt="Blazer Inverno 6">
-      <div class="price">R$ 49,90</div>
-      <div class="options"><strong>Tamanhos:</strong><br>
-        <button>P</button><button>M</button><button>G</button><button>GG</button>
-        <button>G1</button><button>G2</button><button>G3</button><button>G4</button>
-      </div>
-    </div>
-  </div>
-</section>
- <section class="produtos">
-    <h2>Jaquetas de Inverno</h2>
-    <div class="galeria">
-      <div class="produto">
-        <img src="jaqueta-inverno-1.jpg.jpeg" alt="Jaqueta Inverno 1">
-      </div>
-      <div class="produto">
-        <img src="jaqueta-inverno-2.jpg.jpeg" alt="Jaqueta Inverno 2">
-      </div>
-      <div class="produto">
-        <img src="jaqueta-inverno-3.jpg.jpeg" alt="Jaqueta Inverno 3">
-      </div>
-      <div class="produto">
-        <img src="jaqueta-inverno-4.jpg.jpeg" alt="Jaqueta Inverno 4">
+      <div class="product">
+        <img src="blazerinverno-6.jpg.jpeg" alt="Blazer Inverno 6" />
+        <div class="price">R$ 49,90</div>
+        <div class="options"><strong>Tamanhos:</strong><br />
+          <button>P</button><button>M</button><button>G</button><button>GG</button>
+          <button>G1</button><button>G2</button><button>G3</button><button>G4</button>
+        </div>
       </div>
     </div>
   </section>
+
+  <section class="produtos">
+    <h2>Jaquetas de Inverno</h2>
+    <div class="gallery">
+      <div class="produto">
+        <img src="jaqueta-inverno-1.jpg.jpeg" alt="Jaqueta Inverno 1" />
+      </div>
+      <div class="produto">
+        <img src="jaqueta-inverno-2.jpg.jpeg" alt="Jaqueta Inverno 2" />
+      </div>
+      <div class="produto">
+        <img src="jaqueta-inverno-3.jpg.jpeg" alt="Jaqueta Inverno 3" />
+      </div>
+      <div class="produto">
+        <img src="jaqueta-inverno-4.jpg.jpeg" alt="Jaqueta Inverno 4" />
+      </div>
+    </div>
+  </section>
+
   <section id="gominhos">
     <h2>🧸 Casacos de Gominhos - R$99,90</h2>
     <div class="gominhos-gallery">
@@ -263,12 +418,12 @@
         <div class="promo-tag">Novo</div>
         <div class="price">R$ 99,90</div>
         <div class="options">
-          <strong>Cores:</strong><br>
+          <strong>Cores:</strong><br />
           <button>Camurça</button>
           <button>White</button>
         </div>
         <div class="options">
-          <strong>Tamanhos:</strong><br>
+          <strong>Tamanhos:</strong><br />
           <button>P</button>
           <button>M</button>
           <button>G</button>
@@ -281,12 +436,12 @@
         <div class="promo-tag">Novo</div>
         <div class="price">R$ 99,90</div>
         <div class="options">
-          <strong>Cores:</strong><br>
+          <strong>Cores:</strong><br />
           <button>Camurça</button>
           <button>White</button>
         </div>
         <div class="options">
-          <strong>Tamanhos:</strong><br>
+          <strong>Tamanhos:</strong><br />
           <button>P</button>
           <button>M</button>
           <button>G</button>
@@ -300,8 +455,7 @@
   <section id="depoimentos">
     <h2>💬 O que dizem nossas clientes</h2>
     <div class="testimonials">
-      “Amei os looks! Chegou super rápido. Atendimento 10/10! ⭐⭐⭐⭐⭐”  
-      <br><br>
+      “Amei os looks! Chegou super rápido. Atendimento 10/10! ⭐⭐⭐⭐⭐”<br /><br />
       “Compra rápida, produtos lindos e ótimos preços. Super recomendo!”
     </div>
   </section>
@@ -342,6 +496,24 @@
 
     setInterval(updateCountdown, 1000);
     updateCountdown();
+
+    // Menu hamburguer toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const nav = document.getElementById('nav-links');
+
+    menuBtn.addEventListener('click', () => {
+      const expanded = menuBtn.getAttribute('aria-expanded') === 'true' || false;
+      menuBtn.setAttribute('aria-expanded', !expanded);
+      nav.classList.toggle('show');
+    });
+
+    // Fecha menu ao clicar em link
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('show');
+        menuBtn.setAttribute('aria-expanded', false);
+      });
+    });
   </script>
 </body>
 </html>
