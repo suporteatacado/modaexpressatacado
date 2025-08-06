@@ -1,198 +1,92 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Moda Express Atacado</title>
   <style>
-    * {
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Arial', sans-serif;
-      margin: 0;
-      background: #fffaf7;
-      color: #333;
-    }
-    header {
-      background-color: #ff4d6d;
-      color: white;
-      padding: 20px 10px;
-      text-align: center;
-      position: relative;
-    }
-    header img {
-      max-width: 150px;
-      border-radius: 10px;
-    }
-    nav {
-      position: sticky;
-      top: 0;
-      background: white;
-      padding: 10px 0;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      text-align: center;
-      z-index: 100;
-    }
-    nav a {
-      margin: 0 15px;
-      color: #ff4d6d;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .banner {
-      background: linear-gradient(to right, #ff4d6d, #ff8aa1);
-      color: white;
-      padding: 10px;
-      text-align: center;
-      animation: pulse 1.5s infinite;
-    }
-    @keyframes pulse {
-      0% { opacity: 1; }
-      50% { opacity: 0.6; }
-      100% { opacity: 1; }
-    }
-    section {
-      padding: 30px 20px;
-      text-align: center;
-    }
-    h2 {
-      color: #ff4d6d;
-      margin-bottom: 20px;
-    }
-    .categories button {
-      margin: 5px;
-      padding: 12px 20px;
-      background: #ff4d6d;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-    .gallery, .bestsellers, .gominhos-gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 15px;
-      margin-top: 20px;
-    }
-    .product {
-      position: relative;
-      background: white;
-      border-radius: 10px;
-      padding: 10px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    .product img {
-      width: 100%;
-      border-radius: 10px;
-    }
-    .promo-tag {
-      position: absolute;
-      top: 8px;
-      left: 8px;
-      background: #ff4d6d;
-      color: white;
-      padding: 5px 10px;
-      border-radius: 6px;
-      font-size: 0.8em;
-    }
-    .product .price {
-      color: #ff4d6d;
-      font-weight: bold;
-      margin-top: 8px;
-    }
-    .product .options {
-      margin-top: 10px;
-    }
-    .options button {
-      margin: 3px;
-      padding: 8px 12px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      background: #eee;
-    }
-    .timer {
-      font-size: 1.3em;
-      margin-top: 10px;
-    }
-    .buttons a {
-      display: inline-block;
-      margin: 10px;
-      padding: 12px 20px;
-      text-decoration: none;
-      color: white;
-      border-radius: 8px;
-      font-weight: bold;
-    }
-    .whatsapp { background: #25d366; }
-    .instagram { background: #e1306c; }
-    .testimonials {
-      max-width: 600px;
-      margin: auto;
-      font-style: italic;
-      color: #444;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #f5f5f5;
-      color: #777;
-      font-size: 0.9em;
-    }
+    * { box-sizing: border-box; margin:0; padding:0; }
+    body { font-family: Arial, sans-serif; background:#fffaf7; color:#333; }
+    header{background:#ff4d6d;color:#fff;padding:20px;text-align:center;}
+    nav{background:#fff;display:flex;overflow-x:auto;border-bottom:1px solid #eee;}
+    nav a{flex:1;padding:12px;text-align:center;color:#ff4d6d;text-decoration:none;font-weight:bold;}
+    section{padding:30px 20px;text-align:center;}
+    h2{color:#ff4d6d;margin-bottom:20px;}
+    .products, .gominhos { display:grid; grid-template-columns:repeat(auto-fill,minmax(160px,1fr)); gap:15px;}
+    .product{background:#fff;border-radius:8px;box-shadow:0 2px 4px rgba(0,0,0,0.1);padding:10px;}
+    .product img{width:100%;border-radius:8px;}
+    .promo-tag{position:absolute;top:8px;left:8px;background:#ff4d6d;color:#fff;padding:4px 8px;border-radius:4px;font-size:0.8em;}
+    .price{color:#ff4d6d;font-weight:bold;margin-top:8px;}
+    .options{margin-top:8px;}
+    .options button{margin:3px;padding:6px 10px;background:#eee;border:none;border-radius:5px;cursor:pointer;}
+    .buttons a{display:inline-block;margin:10px;padding:12px 20px;color:#fff;background:#25d366;border-radius:8px;text-decoration:none;font-weight:bold;}
+    .buttons a.instagram{background:#e1306c;}
+    footer{text-align:center;padding:20px;background:#f5f5f5;color:#777;font-size:0.9em;}
   </style>
 </head>
 <body>
+
   <header>
-    <img src="logo.jpeg" alt="Moda Express Logo" />
+    <img src="logo.jpeg" alt="Moda Express Logo" style="max-width:120px;margin-bottom:8px;">
     <h1>Moda Express Atacado</h1>
     <p>Looks direto da fábrica com preços imbatíveis!</p>
   </header>
 
-  <div class="banner">🚚 FRETE GRÁTIS para pedidos acima de R$200 - Aproveite!</div>
-
   <nav>
-    <a href="#categorias">Categorias</a>
-    <a href="#bestsellers">Mais Vendidos</a>
-    <a href="#gominhos">Casacos Gominhos</a>
+    <a href="#inicio">Início</a>
+    <a href="#promo">Promoção</a>
+    <a href="#blusas">Blusas</a>
+    <a href="#jaquetas">Jaquetas</a>
     <a href="#contato">Contato</a>
-    <a href="https://www.instagram.com/modaexpress_atacado" target="_blank">Instagram</a>
+    <a href="https://instagram.com/modaexpress_atacado" target="_blank">Instagram</a>
   </nav>
 
-  <section id="categorias">
-    <h2>🧥 Categorias</h2>
-    <div class="categories">
-      <button>Blusas</button>
-      <button>Vestidos</button>
-      <button>Conjuntos</button>
-      <button>Shorts</button>
-      <button>Promoções</button>
-    </div>
+  <section id="promo">
+    <div style="background:#ff8aa1;color:#fff;padding:12px;border-radius:4px;">🚚 Frete grátis acima de R$200</div>
   </section>
 
   <section id="bestsellers">
     <h2>🔥 Mais Vendidos</h2>
-    <div class="bestsellers">
-      <div class="product">
-        <img src="produto1.jpg" alt="Produto 1" />
-        <div class="promo-tag">Promoção</div>
-      </div>
-      <div class="product">
-        <img src="produto2.jpg" alt="Produto 2" />
-        <div class="promo-tag">Promoção</div>
-      </div>
-      <div class="product">
-        <img src="produto3.jpg" alt="Produto 3" />
-        <div class="promo-tag">Promoção</div>
-      </div>
-    </div>
-    <div class="timer">
-      ⏳ Promoção acaba em: <span id="countdown">Carregando...</span>
+    <div class="products">
+      <div class="product"><img src="prod1.jpg" alt="Produto"><div class="promo-tag">Promo</div><div class="price">R$ 149,90</div></div>
+      <div class="product"><img src="prod2.jpg" alt="Produto"><div class="promo-tag">Promo</div><div class="price">R$ 129,90</div></div>
+      <div class="product"><img src="prod3.jpg" alt="Produto"><div class="promo-tag">Promo</div><div class="price">R$ 119,90</div></div>
     </div>
   </section>
 
   <section id="gominhos">
-    <h2>🧸 Casacos de Gominhos - R$99,90</h2>
-    <div class="gominhos-gallery">
-      <div class="product">
-        <img src="casaco-gominho1.jpg" alt="Casaco Gominho Camurça
+    <h2>🧸 Casacos de Gominhos – R$99,90</h2>
+    <div class="gominhos">
+      <div class="product"><img src="casaco-camurca.jpg" alt="Gominho Camurça"><div class="promo-tag">Novo</div><div class="price">R$ 99,90</div>
+        <div class="options"><strong>Cores:</strong><br><button>Camurça</button><button>White</button></div>
+        <div class="options"><strong>Tamanhos:</strong><br><button>P</button><button>M</button><button>G</button><button>GG</button><button>G1</button></div>
+      </div>
+      <div class="product"><img src="casaco-white.jpg" alt="Gominho White"><div class="promo-tag">Novo</div><div class="price">R$ 99,90</div>
+        <div class="options"><strong>Cores:</strong><br><button>Camurça</button><button>White</button></div>
+        <div class="options"><strong>Tamanhos:</strong><br><button>P</button><button>M</button><button>G</button><button>GG</button><button>G1</button></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="depoimentos">
+    <h2>💬 O que dizem nossas clientes</h2>
+    <div style="max-width:600px;margin:0 auto;font-style:italic;color:#444;">
+      “Amei os looks! Chegou super rápido. Atendimento nota 10!”<br><br>
+      “Produtos lindos, ótimo preço e entrega rápida. Recomendo!”
+    </div>
+  </section>
+
+  <section id="contato">
+    <h2>📞 Fale com a gente</h2>
+    <div class="buttons">
+      <a class="whatsapp" href="https://wa.me/5511919433294" target="_blank">WhatsApp</a>
+      <a class="instagram" href="https://instagram.com/modaexpress_atacado" target="_blank">Instagram</a>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Moda Express Atacado. Enviamos para todo o Brasil.
+  </footer>
+
+</body>
+</html>
