@@ -1,99 +1,198 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Moda Express Atacado</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    * {
+      box-sizing: border-box;
+    }
     body {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      background: #fffaf7;
+      color: #333;
+    }
+    header {
+      background-color: #ff4d6d;
+      color: white;
+      padding: 20px 10px;
+      text-align: center;
+      position: relative;
+    }
+    header img {
+      max-width: 150px;
+      border-radius: 10px;
+    }
+    nav {
+      position: sticky;
+      top: 0;
+      background: white;
+      padding: 10px 0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      text-align: center;
+      z-index: 100;
+    }
+    nav a {
+      margin: 0 15px;
+      color: #ff4d6d;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .banner {
+      background: linear-gradient(to right, #ff4d6d, #ff8aa1);
+      color: white;
+      padding: 10px;
+      text-align: center;
+      animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse {
+      0% { opacity: 1; }
+      50% { opacity: 0.6; }
+      100% { opacity: 1; }
+    }
+    section {
+      padding: 30px 20px;
+      text-align: center;
+    }
+    h2 {
+      color: #ff4d6d;
+      margin-bottom: 20px;
+    }
+    .categories button {
+      margin: 5px;
+      padding: 12px 20px;
+      background: #ff4d6d;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .gallery, .bestsellers, .gominhos-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .product {
+      position: relative;
+      background: white;
+      border-radius: 10px;
+      padding: 10px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .product img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .promo-tag {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      background: #ff4d6d;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 6px;
+      font-size: 0.8em;
+    }
+    .product .price {
+      color: #ff4d6d;
+      font-weight: bold;
+      margin-top: 8px;
+    }
+    .product .options {
+      margin-top: 10px;
+    }
+    .options button {
+      margin: 3px;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background: #eee;
+    }
+    .timer {
+      font-size: 1.3em;
+      margin-top: 10px;
+    }
+    .buttons a {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 20px;
+      text-decoration: none;
+      color: white;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+    .whatsapp { background: #25d366; }
+    .instagram { background: #e1306c; }
+    .testimonials {
+      max-width: 600px;
+      margin: auto;
+      font-style: italic;
+      color: #444;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #f5f5f5;
+      color: #777;
+      font-size: 0.9em;
     }
   </style>
 </head>
-<body class="bg-white text-gray-800">
-  <!-- Cabeçalho -->
-  <header class="bg-black text-white p-4 text-center text-xl font-semibold sticky top-0 z-50">
-    Moda Express Atacado
+<body>
+  <header>
+    <img src="logo.jpeg" alt="Moda Express Logo" />
+    <h1>Moda Express Atacado</h1>
+    <p>Looks direto da fábrica com preços imbatíveis!</p>
   </header>
 
-  <!-- Banner Principal -->
-  <section class="w-full">
-    <img src="imagens/banner-principal.jpg" alt="Moda Express Banner" class="w-full h-auto object-cover" />
-  </section>
+  <div class="banner">🚚 FRETE GRÁTIS para pedidos acima de R$200 - Aproveite!</div>
 
-  <!-- Novidades da Semana -->
-  <section class="px-4 py-6">
-    <h2 class="text-xl md:text-2xl font-bold text-center mb-6 text-pink-600">Novidades da Semana</h2>
-    <div class="grid gap-6 md:grid-cols-2">
+  <nav>
+    <a href="#categorias">Categorias</a>
+    <a href="#bestsellers">Mais Vendidos</a>
+    <a href="#gominhos">Casacos Gominhos</a>
+    <a href="#contato">Contato</a>
+    <a href="https://www.instagram.com/modaexpress_atacado" target="_blank">Instagram</a>
+  </nav>
 
-      <!-- Casaco de Gominhos White -->
-      <div class="border rounded-2xl overflow-hidden shadow hover:shadow-lg transition-all">
-        <img src="imagens/casaco-white.jpg" alt="Casaco de Gominhos Branco" class="w-full h-auto object-cover" />
-        <div class="p-4">
-          <h3 class="text-lg font-semibold">Casaco de Gominhos - White</h3>
-          <p class="text-pink-600 text-xl font-bold mt-2">R$ 99,90</p>
-          <p class="mt-2 text-sm">Casaco extremamente quentinho, macio e estiloso. Ideal para os dias frios com muito conforto e elegância.</p>
-          <div class="mt-4">
-            <p class="font-semibold mb-1">Tamanhos disponíveis:</p>
-            <div class="flex flex-wrap gap-2">
-              <span class="border px-3 py-1 rounded-full text-sm">P</span>
-              <span class="border px-3 py-1 rounded-full text-sm">M</span>
-              <span class="border px-3 py-1 rounded-full text-sm">G</span>
-              <span class="border px-3 py-1 rounded-full text-sm">GG</span>
-              <span class="border px-3 py-1 rounded-full text-sm">G1</span>
-            </div>
-            <p class="font-semibold mt-4 mb-1">Cores:</p>
-            <div class="flex flex-wrap gap-2">
-              <span class="bg-white border px-3 py-1 rounded-full text-sm">White</span>
-            </div>
-          </div>
-          <a href="https://wa.me/5511919433294?text=Olá! Tenho interesse no Casaco de Gominhos - White." target="_blank" class="mt-4 inline-block bg-green-500 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-green-600">Comprar via WhatsApp</a>
-        </div>
-      </div>
-
-      <!-- Casaco de Gominhos Camurça -->
-      <div class="border rounded-2xl overflow-hidden shadow hover:shadow-lg transition-all">
-        <img src="imagens/casaco-camurca.jpg" alt="Casaco de Gominhos Camurça" class="w-full h-auto object-cover" />
-        <div class="p-4">
-          <h3 class="text-lg font-semibold">Casaco de Gominhos - Camurça</h3>
-          <p class="text-pink-600 text-xl font-bold mt-2">R$ 99,90</p>
-          <p class="mt-2 text-sm">Com textura única em gominhos, esse casaco oferece muito estilo, aquecimento e sofisticação para os dias frios.</p>
-          <div class="mt-4">
-            <p class="font-semibold mb-1">Tamanhos disponíveis:</p>
-            <div class="flex flex-wrap gap-2">
-              <span class="border px-3 py-1 rounded-full text-sm">P</span>
-              <span class="border px-3 py-1 rounded-full text-sm">M</span>
-              <span class="border px-3 py-1 rounded-full text-sm">G</span>
-              <span class="border px-3 py-1 rounded-full text-sm">GG</span>
-              <span class="border px-3 py-1 rounded-full text-sm">G1</span>
-            </div>
-            <p class="font-semibold mt-4 mb-1">Cores:</p>
-            <div class="flex flex-wrap gap-2">
-              <span class="bg-yellow-800 text-white px-3 py-1 rounded-full text-sm">Camurça</span>
-            </div>
-          </div>
-          <a href="https://wa.me/5511919433294?text=Olá! Tenho interesse no Casaco de Gominhos - Camurça." target="_blank" class="mt-4 inline-block bg-green-500 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-green-600">Comprar via WhatsApp</a>
-        </div>
-      </div>
-
+  <section id="categorias">
+    <h2>🧥 Categorias</h2>
+    <div class="categories">
+      <button>Blusas</button>
+      <button>Vestidos</button>
+      <button>Conjuntos</button>
+      <button>Shorts</button>
+      <button>Promoções</button>
     </div>
   </section>
 
-  <!-- Rodapé -->
-  <footer class="text-center text-sm text-gray-500 p-4 mt-10">
-    <p>© 2025 Moda Express Atacado. Todos os direitos reservados.</p>
-    <p>
-      <a href="https://instagram.com/sualoja" target="_blank" class="text-pink-500 underline">Siga-nos no Instagram</a>
-    </p>
-  </footer>
+  <section id="bestsellers">
+    <h2>🔥 Mais Vendidos</h2>
+    <div class="bestsellers">
+      <div class="product">
+        <img src="produto1.jpg" alt="Produto 1" />
+        <div class="promo-tag">Promoção</div>
+      </div>
+      <div class="product">
+        <img src="produto2.jpg" alt="Produto 2" />
+        <div class="promo-tag">Promoção</div>
+      </div>
+      <div class="product">
+        <img src="produto3.jpg" alt="Produto 3" />
+        <div class="promo-tag">Promoção</div>
+      </div>
+    </div>
+    <div class="timer">
+      ⏳ Promoção acaba em: <span id="countdown">Carregando...</span>
+    </div>
+  </section>
 
-  <!-- Botão flutuante do WhatsApp -->
-  <a href="https://wa.me/5511919433294" class="fixed bottom-4 right-4 bg-green-500 p-3 rounded-full shadow-lg hover:bg-green-600 z-50" target="_blank">
-    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" class="w-6 h-6">
-  </a>
-</body>
-</html>
+  <section id="gominhos">
+    <h2>🧸 Casacos de Gominhos - R$99,90</h2>
+    <div class="gominhos-gallery">
+      <div class="product">
+        <img src="casaco-gominho1.jpg" alt="Casaco Gominho Camurça
